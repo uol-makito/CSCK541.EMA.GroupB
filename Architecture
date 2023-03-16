@@ -1,0 +1,25 @@
+The architecture of a simple client/server network typically involves a client program that requests services from a server program over a network. The server program responds to client requests and performs the requested services.
+
+To complete the tasks at hand, the architecture of the client/server network should have the following components:
+1.	Client program - The client program is responsible for creating the dictionary and the text file, populating them, serializing them, and sending them to the server. It should also provide the user with options to choose the pickling format and encrypt the text in the text file.
+2.	Server program - The server program is responsible for receiving the dictionary and text file from the client, printing their contents to the screen and/or to a file, and handling encrypted contents.
+3.	Network - The network provides a means for the client and server to communicate with each other. It can be a local area network (LAN) or a wide area network (WAN).
+4.	Serialization - Serialization is the process of converting a data structure or object into a format that can be transmitted over a network. In this case, the client will need to serialize the dictionary using one of the available formats: binary, JSON, or XML.
+5.	Encryption - Encryption is the process of converting plain text into ciphertext to secure the contents of the text file. The client should be able to encrypt the contents of the text file before sending it to the server.
+6.	File I/O - File I/O is the process of reading from and writing to files. The server should be able to handle incoming text files and print their contents to the screen and/or to a file.
+
+Functional requirements:
+•	The ability for the client to send data (e.g. a dictionary or a file) to the server
+•	The ability for the server to receive and process the data sent by the client
+•	The ability for the user to select the format in which the data is serialized (e.g. binary, JSON, XML)
+•	The ability for the user to choose to encrypt the data
+•	The ability for the server to handle encrypted data
+•	The ability for the user to specify where the data should be printed (e.g. to the screen or to a file)
+•	The ability for the server to log information about the received data
+
+Non-functional requirements:
+•	Security: the system should be secure and protect data from unauthorized access or tampering
+•	Reliability: the system should be reliable and able to handle errors or unexpected situations gracefully
+•	Performance: the system should perform efficiently and respond quickly to user requests
+•	Usability: the system should be user-friendly and easy to use for both the client and server users
+•	Maintainability: the system should be easy to maintain and update, with clear and well-documented code and architecture.
