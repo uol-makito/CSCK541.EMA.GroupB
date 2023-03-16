@@ -2,7 +2,7 @@
 This script creates a dictionary, writes its content to a text file, serialises it, 
 encrypts the text file, and sends both the serialised dictionary and the encrypted text file 
 to a server using HTTP POST. The user is prompted to specify the pickling format, and whether 
-or not to encrypt the text file.
+to encrypt the text file.
 
 Usage:
     Run the script, and follow the prompts to specify the pickling format and encryption 
@@ -40,7 +40,7 @@ try:
 
     # Print a message indicating that the dictionary was created, along with its contents.
     print(f"Created dictionary:\n{my_dict}\n")
-except:
+except Exception:
     # If an exception occurs, print an error message and exit the programme.
     print("Error occurred while creating dictionary. \n")
     sys.exit()
@@ -60,7 +60,7 @@ try:
 
     # Print a message indicating that the text file was created, along with its contents.
     print(f"Created text file with following content: \n{text_file_content}\n")
-except:
+except Exception:
     # If an exception occurs, print an error message and exit the programme.
     print("Error occurred while creating or reading text file. \n")
     sys.exit()
@@ -92,7 +92,7 @@ try:
 
     # Print the serialised dictionary in the specified format.
     print(f"Serialised dictionary ({pickling_format}): \n{serialised_dict}\n")
-except:
+except Exception:
     # If an exception occurs, print an error message and exit the programme.
     print("Error occurred while processing dictionary. \n")
     sys.exit()
@@ -113,7 +113,7 @@ try:
         is_encrypted = "0"
         encryption_key = b""
         text_file_encrypted = text_file_content
-except:
+except Exception:
     # If an exception occurs, print an error message and exit the programme.
     print("Error occurred while processing text file. \n")
     sys.exit()
@@ -124,14 +124,14 @@ try:
 
     # Send HTTP POST request with serialised dictionary as data and text file as files.
     response = requests.post(f"http://{server_host}:{server_port}",
-                            data={ "SerialisedDictionary": serialised_dict },
-                            files={ "TextFile": (text_file_name, text_file_encrypted) },
-                            headers={
+                             data={"SerialisedDictionary": serialised_dict},
+                             files={"TextFile": (text_file_name, text_file_encrypted)},
+                             headers={
                                 "IsEncrypted": is_encrypted,
                                 "EncryptionKey": base64.b64encode(encryption_key),
                                 "PicklingFormat": pickling_format
                                 },
-                            timeout=request_timeout)
+                             timeout=request_timeout)
 
     # Check if request was successful (status code 200).
     if response.status_code == 200:
@@ -144,7 +144,7 @@ try:
         print("Failed to send serialised dictionary and text file. ")
         print(f" - Response Status: {response.status_code}")
         print(f" - Response Content: {response.text}")
-except:
+except Exception:
     # If an exception occurs, print an error message and exit the programme.
     print("Error occurred while sending request HTTP POST request to server. \n")
     sys.exit()

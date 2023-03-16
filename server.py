@@ -1,5 +1,5 @@
 """
-This script defines a HTTP server that can receive serialised dictionaries and encrypted text
+This script defines HTTP server that can receive serialised dictionaries and encrypted text
 files via HTTP POST requests, and then deserialise and decrypt them respectively. It also provides
 options to print and/or save the received contents.
 
@@ -20,7 +20,7 @@ import pickle
 import sys
 import xml.etree.ElementTree as ET
 from datetime import datetime
-from http.server import BaseHTTPRequestHandler, HTTPServer
+import http.server
 from cryptography.fernet import Fernet
 
 # Variable declarations.
@@ -28,7 +28,8 @@ server_port = 8080
 receive_print = 1
 receive_save = 0
 
-class MyHandler(BaseHTTPRequestHandler):
+
+class MyHandler(http.server.BaseHTTPRequestHandler):
     """
     A subclass of BaseHTTPRequestHandler that handles HTTP POST requests.
     """
@@ -48,11 +49,11 @@ class MyHandler(BaseHTTPRequestHandler):
         try:
             # Capture HTTP POST variables using the "cgi" module.
             postvars = cgi.FieldStorage(fp=self.rfile,
-                            headers=self.headers,
-                            environ={'REQUEST_METHOD': 'POST'},
-                            keep_blank_values=1,
-                            strict_parsing=1)
-        except:
+                                        headers=self.headers,
+                                        environ={'REQUEST_METHOD': 'POST'},
+                                        keep_blank_values=1,
+                                        strict_parsing=1)
+        except Exception:
             # If an exception occurs, print an error message and exit the programme.
             print("Error occurred while capturing HTTP POST variables. \n")
             sys.exit()
@@ -94,11 +95,10 @@ class MyHandler(BaseHTTPRequestHandler):
                     with open(dict_file_name, "w", encoding="utf-8") as write_dict_file:
                         write_dict_file.write(f"{pickling_format}:\n{serialised_dict}")
                         write_dict_file.close()
-        except:
+        except Exception:
             # If an exception occurs, print an error message and exit the programme.
             print("Error occurred while processing received dictionary. \n")
             sys.exit()
-
 
         try:
             # Get the encrypted bytes of the text file from the POST request.
@@ -141,7 +141,7 @@ class MyHandler(BaseHTTPRequestHandler):
                     with open(text_file_name, "w", encoding="utf-8") as write_text_file:
                         write_text_file.write(text_file_content)
                         write_text_file.close()
-        except:
+        except Exception:
             # If an exception occurs, print an error message and exit the programme.
             print("Error occurred while processing received text file. \n")
             sys.exit()
@@ -158,17 +158,18 @@ class MyHandler(BaseHTTPRequestHandler):
 
             # Write the message "RECEIVED" to the response body.
             self.wfile.write(b"RECEIVED")
-        except:
+        except Exception:
             # If an exception occurs, print an error message and exit the programme.
             print("Error occurred while sending response to client. \n")
             sys.exit()
+
 
 try:
     # Set server address to localhost on a defined port.
     server_address = ("", server_port)
 
     # Create an HTTP server object with the specified server address and request handler class.
-    httpd = HTTPServer(server_address, MyHandler)
+    httpd = http.server.HTTPServer(server_address, MyHandler)
 
     # Prompt user to choose receive action (print, save, or both) for the text file content.
     receive_action_choice = input("Please select receive action (print, save, both): ").lower()
@@ -190,12 +191,12 @@ try:
         receive_print = 1
         receive_save = 0
 
-    # Print a message indicating that a the HTTP server is being started.
+    # Print a message indicating that the HTTP server is being started.
     print(f"Starting HTTP server on port {server_port}...\n")
 
     # Start the HTTP server and serve requests indefinitely.
     httpd.serve_forever()
-except:
+except Exception:
     # If an exception occurs, print an error message and exit the programme.
     print(f"Error occurred while starting HTTP server on port {server_port}. \n")
     sys.exit()
