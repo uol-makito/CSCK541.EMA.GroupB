@@ -1,0 +1,15 @@
+
+A simple client/server network architecture typically involves a client program that requests services
+from a server program over a network. The server program responds to client requests and performs
+the requested services.
+
+To complete the tasks at hand, the architecture of the client/server network should have the following
+components:
+
+• The ability for the client to send data (e.g., a dictionary or a file) to the server
+• The ability for the server to receive and process the data transmitted by the client
+• The ability for the user to select the format in which the data is serialised (e.g., binary, JSON, XML)
+• The ability for the user to choose to encrypt the data
+• The ability for the server to handle encrypted data
+• The ability for the user to specify where the data should be printed (e.g. to the screen or a file)
+• The ability for the server to log information about the received data
