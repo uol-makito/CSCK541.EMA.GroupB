@@ -33,7 +33,7 @@ class MyHandler(BaseHTTPRequestHandler):
     A subclass of BaseHTTPRequestHandler that handles HTTP POST requests.
     """
 
-    def process_dictionary(self, postvars):
+    def process_dict(self, postvars):
         """
         Function for processing received dictionary.
         """
@@ -148,7 +148,7 @@ class MyHandler(BaseHTTPRequestHandler):
             sys.exit()
 
         try:
-            self.process_dictionary(postvars)
+            self.process_dict(postvars)
         except Exception as e:
             # If an exception occurs, print an error message and exit the program.
             print(f"*** Error occurred while processing received dictionary. \n{e}\n")
