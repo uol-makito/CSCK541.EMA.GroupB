@@ -108,6 +108,7 @@ try:
         fernet = Fernet(encryption_key)
         text_file_encrypted = fernet.encrypt(bytes(text_file_content, encoding="utf-8"))
     else:
+        # Consider adding some kind of feedback here to let the user know which option they have chosen
         # If the user doesn't want to encrypt the text file,
         # set the encryption key and encrypted text to default values.
         is_encrypted = "0"
