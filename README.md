@@ -56,7 +56,7 @@ the serialisation format and whether the file should be encrypted.
 
 This code runs a basic set of manual unit and intergrated tests. 
 
-
+```bash
 Our server has three modes:
 
 • Print: only show the content, don’t save
@@ -64,8 +64,9 @@ Our server has three modes:
 • Save: only save the content, don’t show
 
 • Both: print and save the content
+```
 
-
+```bash
 Our client can send a dictionary object in three different formats:
 
 • BINARY
@@ -73,14 +74,15 @@ Our client can send a dictionary object in three different formats:
 • JSON
 
 • XML
+```
 
-
+```bash
 Our client has two options for sending files:
 
 • Unencrypted
 
 • Encrypted
-
+```
 
 The table below displays the observed results for all possible configuration combinations:
 
