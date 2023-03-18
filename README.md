@@ -20,14 +20,14 @@ To install the requirements file, run the following command in your terminal win
 
 To establish the network, run this command in your terminal window:
 
-```bash
+```
 $ python server.py
 ```
 
 You have now initiated your server. Open a new terminal window and execute the
 following command:
 
-```bash
+```
 $ python client.py
 ```
 
@@ -55,7 +55,7 @@ the serialisation format and whether the file should be encrypted.
 
 This application ran a basic set of manual unit and integration tests based on the following features: 
 
-```bash
+```
 Our server has three modes:
 
 • Print: only show the content, don’t save
@@ -65,7 +65,7 @@ Our server has three modes:
 • Both: print and save the content
 ```
 
-```bash
+```
 Our client can send a dictionary object in three different formats:
 
 • BINARY
@@ -75,7 +75,7 @@ Our client can send a dictionary object in three different formats:
 • XML
 ```
 
-```bash
+```
 Our client has two options for sending files:
 
 • Unencrypted
