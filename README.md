@@ -59,20 +59,25 @@ for more information.
 
 Our server has three modes:
 
--Print: only show the content, don’t save
--Save: only save the content, don’t show
--Both: print and save the content
+• Print: only show the content, don’t save
+
+• Save: only save the content, don’t show
+
+• Both: print and save the content
 
 Our client can send a dictionary object in three different formats:
 
--BINARY
--JSON
--XML
+• BINARY
+
+• JSON
+
+• XML
 
 Our client has two options for sending files:
 
--Unencrypted
--Encrypted
+• Unencrypted
+
+• Encrypted
 
 ![image](https://user-images.githubusercontent.com/58013610/226113563-ce44c64e-0b29-468c-827c-c4bb8d8b85d5.png)
 
