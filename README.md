@@ -1,16 +1,15 @@
 # Build a Simple Client-Server Network Application
 
-This is a group project for the University of Liverpool's Software Development
-in Practice module. The group is formed of the following individuals:
+This is a group project for the Software Development in Practice module at the University of Liverpool. 
+
+The group consists of the following members:
 
 1. Chi-Wei Lam (Project Manager & Tester)
 2. Maria Petrochenkova (Software Architect)
 3. Minh Lay (Software Engineer)
 
-For this collaborative project, we were tasked with developing a simple client-server network
-application and carrying out several activities relating to the serialisation of data, the transfer 
-of files, and the encryption of data once the network was formed.
 
+For this collaborative project, we were tasked with developing a simple client-server network application and carrying out several activities relating to the serialisation of data, the transfer of files, and the encryption of data once the network was formed.
 
 ## How do I get started?
 
