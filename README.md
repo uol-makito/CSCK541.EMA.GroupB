@@ -11,7 +11,7 @@ The group consists of the following members:
 
 For this collaborative project, we were tasked with developing a simple client-server network application and carrying out several activities relating to the serialisation of data, the transfer of files, and the encryption of data once the network was formed.
 
-## How do I get started?
+## How to get started?
 
 Ensure that you have installed the necessary packages listed in `requirements.txt` prior to starting.
 
@@ -37,7 +37,7 @@ Your client should now be connected to your server.
 ## How to use?
 
 This application will execute using the dictionary object provided. However, should you wish to use 
-a different data set or change the data type. Please locate the dictionary object on line 29 of
+a different data set or change the data type, please locate the dictionary object on line 29 of
 the client.py file and make the necessary changes.
 
 ```bash
@@ -53,7 +53,7 @@ the serialisation format and whether the file should be encrypted.
 
 ## Tests
 
-This application ran a basic set of manual unit and integration tests based on the following features: 
+This application run a basic set of manual unit and integration tests based on the following features: 
 
 ```
 Our server has three modes:
@@ -93,9 +93,17 @@ for more information.
 
 ## License
 
+
+Licensed under the MIT License;
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   https://mit-license.org/
+
 The MIT License (MIT)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
