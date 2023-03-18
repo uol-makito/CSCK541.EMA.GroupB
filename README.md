@@ -15,6 +15,7 @@ of files, and the encryption of data once the network was formed.
 ## How do I get started?
 
 Ensure that you have installed the necessary packages listed in `requirements.txt` prior to starting.
+
 To install the requirements file, run the following command in your terminal window: 
 `pip install -r requirements.txt`
 
@@ -53,9 +54,8 @@ the serialisation format and whether the file should be encrypted.
 
 ## Tests
 
-This code runs a basic set of manual unit and intergrated tests. Please see the test 
-result images along with the functional requirement specification in `/test/` 
-for more information. 
+This code runs a basic set of manual unit and intergrated tests. 
+
 
 Our server has three modes:
 
@@ -85,6 +85,10 @@ Our client has two options for sending files:
 The table below displays the observed results for all possible configuration combinations:
 
 ![image](https://user-images.githubusercontent.com/58013610/226113563-ce44c64e-0b29-468c-827c-c4bb8d8b85d5.png)
+
+Please see the test result images along with the functional requirement specification in `/test/` 
+for more information. 
+
 
 ## License
 
