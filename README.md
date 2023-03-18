@@ -54,7 +54,7 @@ the serialisation format and whether the file should be encrypted.
 
 ## Tests
 
-This application ran a basic set of manual unit and intergrated tests based on the following features: 
+This application ran a basic set of manual unit and integrated tests based on the following features: 
 
 ```bash
 Our server has three modes:
