@@ -37,7 +37,7 @@ Your client should now be connected to your server.
 ## How to use?
 
 This application will execute using the dictionary object provided. However, should you wish to use 
-a different data set or change the data type, please locate the dictionary object on line 29 of
+a different data set or change the data type, please locate the dictionary object on line 39 of
 the client.py file and make the necessary changes.
 
 ```bash
