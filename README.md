@@ -7,39 +7,71 @@ in Practice module. The group is formed of the following individuals:
 2. Maria Petrochenkova (Software Architect)
 3. Minh Lay (Software Engineer)
 
-For this collaborative project, we were tasked with developing a simple client-server network applica-
-tion and carrying out several required activities relating to the serialisation of data, the transfer of files,
-and the encryption of data once the network was formed. 
+For this collaborative project, we were tasked with developing a simple client-server network
+application and carrying out several activities relating to the serialisation of data, the transfer 
+of files, and the encryption of data once the network was formed.
 
 
 ## How do I get started?
 
-Before you begin, ensure you install the necessary packages that can be
-found in `requirements.txt`.
-
-To install the requirements file, run the following command in your terminal window: `pip install -r requirements.txt`
+Ensure that you have installed the necessary packages listed in `requirements.txt` prior to starting.
+To install the requirements file, run the following command in your terminal window: 
+`pip install -r requirements.txt`
 
 To establish the network, run this command in your terminal window:
 
 ```bash
-$ python3 server.py
+$ python server.py
 ```
 
 You have now initiated your server. Open a new terminal window and execute the
 following command:
 
 ```bash
-$ python3 client.py
+$ python client.py
 ```
 
 Your client should now be connected to your server.
 
 
+## How to use?
+
+This application will execute using the dictionary object provided. However, should you wish to use 
+a different data set or change the data type. Please locate the dictionary object on line 29 of
+the client.py file and make the necessary changes.
+
+```bash
+my_dict = {"name": "Alice", "age": 25, "city": "New York"}
+```
+
+Once the server.py file has been initialised, follow the on-screen prompt to decide how to handle 
+the data received from the client.py file.
+
+Similarly, once the client.py file has been initialised, follow the on-screen prompt to choose 
+the serialisation format and whether the file should be encrypted.
+
+
 ## Tests
 
-This code runs a basic set of unit and performance tests. Please see the
-unit and performance within `/test/` for more information. 
+This code runs a basic set of manual unit and intergrated tests. Please see the test 
+result images along with the functional requirement specification in `/test/` 
+for more information. 
 
+Our server has three modes:
+• Print: only show the content, don’t save
+• Save: only save the content, don’t show
+• Both: print and save the content
+
+Our client can send a dictionary object in three different formats:
+• BINARY
+• JSON
+• XML
+
+Our client has two options for sending files:
+• Unencrypted
+• Encrypted
+
+Summary of all possible configuration combination.png
 
 ## License
 
