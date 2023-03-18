@@ -87,7 +87,7 @@ The table below displays the observed results for all possible configuration com
 
 ![image](https://user-images.githubusercontent.com/58013610/226113563-ce44c64e-0b29-468c-827c-c4bb8d8b85d5.png)
 
-Please see the test result images along with the functional requirements specification in `/test/` 
+Please see the test result images in `/test/`, along with the functional requirements specification  
 for more information. 
 
 
