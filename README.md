@@ -58,16 +58,19 @@ result images along with the functional requirement specification in `/test/`
 for more information. 
 
 Our server has three modes:
+
 -Print: only show the content, don’t save
 -Save: only save the content, don’t show
 -Both: print and save the content
 
 Our client can send a dictionary object in three different formats:
+
 -BINARY
 -JSON
 -XML
 
 Our client has two options for sending files:
+
 -Unencrypted
 -Encrypted
 
