@@ -53,7 +53,7 @@ the serialisation format and whether the file should be encrypted.
 
 ## Tests
 
-This application run a basic set of manual unit and integration tests based on the following features: 
+This application has run a basic set of manual unit and integration tests based on the following features: 
 
 ```
 Our server has three modes:
