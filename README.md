@@ -65,6 +65,7 @@ Our server has three modes:
 
 • Both: print and save the content
 
+
 Our client can send a dictionary object in three different formats:
 
 • BINARY
@@ -73,11 +74,15 @@ Our client can send a dictionary object in three different formats:
 
 • XML
 
+
 Our client has two options for sending files:
 
 • Unencrypted
 
 • Encrypted
+
+
+The table below displays the observed results for all possible configuration combinations:
 
 ![image](https://user-images.githubusercontent.com/58013610/226113563-ce44c64e-0b29-468c-827c-c4bb8d8b85d5.png)
 
