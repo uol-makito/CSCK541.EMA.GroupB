@@ -11,7 +11,7 @@ The group consists of the following members:
 
 For this collaborative project, we were tasked with developing a simple client-server network application and carrying out several activities relating to the serialisation of data, the transfer of files, and the encryption of data once the network was formed.
 
-## How do I get started?
+## How to get started?
 
 Ensure that you have installed the necessary packages listed in `requirements.txt` prior to starting.
 
@@ -37,7 +37,7 @@ Your client should now be connected to your server.
 ## How to use?
 
 This application will execute using the dictionary object provided. However, should you wish to use 
-a different data set or change the data type. Please locate the dictionary object on line 29 of
+a different data set or change the data type, please locate the dictionary object on line 29 of
 the client.py file and make the necessary changes.
 
 ```bash
@@ -53,7 +53,7 @@ the serialisation format and whether the file should be encrypted.
 
 ## Tests
 
-This application ran a basic set of manual unit and integration tests based on the following features: 
+This application run a basic set of manual unit and integration tests based on the following features: 
 
 ```
 Our server has three modes:
@@ -93,11 +93,11 @@ for more information.
 
 ## License
 
-Licensed under the Apache License, Version 2.0 (the "License");
+Licensed under the MIT License;
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+   https://mit-license.org/
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
