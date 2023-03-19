@@ -127,8 +127,8 @@ try:
 
     # Send HTTP POST request with serialised dictionary as data and text file as files.
     response = requests.post(f"http://{server_host}:{server_port}",
-                             data={ "SerialisedDictionary": serialised_dict },
-                             files={ "TextFile": (text_file_name, text_file_encrypted) },
+                             data={"SerialisedDictionary": serialised_dict},
+                             files={"TextFile": (text_file_name, text_file_encrypted)},
                              headers={
                                 "IsEncrypted": is_encrypted,
                                 "EncryptionKey": base64.b64encode(encryption_key),
