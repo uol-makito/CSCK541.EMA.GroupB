@@ -1,0 +1,27 @@
+CSCK541.EMA.GroupB
+ ┣ test
+ ┃ ┣ Summary of all configuration combination v2.png
+ ┃ ┣ Test 1 v2 - print binary no.png
+ ┃ ┣ Test 10 v2 - print binary yes.png
+ ┃ ┣ Test 11 v2 - print json yes.png
+ ┃ ┣ Test 12 v2 - print xml yes.png
+ ┃ ┣ Test 13 v2 - save binary yes.png
+ ┃ ┣ Test 14 v2 - save json yes.png
+ ┃ ┣ Test 15 v2 - save xml yes.png
+ ┃ ┣ Test 16 v2 - both binary yes.png
+ ┃ ┣ Test 17 v2 - both json yes.png
+ ┃ ┣ Test 18 v2 - both xml yes.png
+ ┃ ┣ Test 2 v2 - print json no.png
+ ┃ ┣ Test 3 v2 - print xml no.png
+ ┃ ┣ Test 4 v2 - save binary no.png
+ ┃ ┣ Test 5 v2 - save json no.png
+ ┃ ┣ Test 6 v2 - save xml no.png
+ ┃ ┣ Test 7 v2 - both binary no.png
+ ┃ ┣ Test 8 v2 - both json no.png
+ ┃ ┗ Test 9 v2 - both xml no.png
+ ┣ Architecture.docx
+ ┣ client.py
+ ┣ LICENSE
+ ┣ README.md
+ ┣ requirements.txt
+ ┗ server.py
