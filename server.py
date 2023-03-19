@@ -28,6 +28,7 @@ server_port = 8080
 receive_print = 1
 receive_save = 0
 
+
 class MyHandler(BaseHTTPRequestHandler):
     """
     A subclass of BaseHTTPRequestHandler that handles HTTP POST requests.
@@ -139,7 +140,7 @@ class MyHandler(BaseHTTPRequestHandler):
             # Capture HTTP POST variables using the "cgi" module.
             postvars = cgi.FieldStorage(fp=self.rfile,
                                         headers=self.headers,
-                                        environ={ "REQUEST_METHOD": "POST" },
+                                        environ={"REQUEST_METHOD": "POST"},
                                         keep_blank_values=1,
                                         strict_parsing=1)
         except Exception as e:
@@ -185,6 +186,7 @@ class MyHandler(BaseHTTPRequestHandler):
             print(f"*** Error occurred while sending response to client. \n{e}\n")
             sys.exit()
 
+            
 try:
     # Set server address to localhost on a defined port.
     server_address = ("", server_port)
