@@ -1,13 +1,8 @@
 # Build a Simple Client-Server Network Application
 
+## What is this project about?
+
 This is a group project for the Software Development in Practice module at the University of Liverpool. 
-
-The group consists of the following members:
-
-1. Chi-Wei Lam (Project Manager & Tester)
-2. Maria Petrochenkova (Software Architect)
-3. Minh Lay (Software Engineer)
-
 
 For this collaborative project, we were tasked with developing a simple client-server network application and carrying out several activities relating to the serialisation of data, the transfer of files, and the encryption of data once the network was formed.
 
@@ -34,7 +29,7 @@ $ python client.py
 Your client should now be connected to your server.
 
 
-## How to use?
+## How to run?
 
 This application will execute using the dictionary object provided. However, should you wish to use 
 a different data set or change the data type, please locate the dictionary object on line 39 of
@@ -90,9 +85,15 @@ The table below displays the observed results for all possible configuration com
 Please see the test result images in `/test/`, along with the functional requirements specification  
 for more information. 
 
+## Contribution
+
+The group consists of the following members:
+
+1. Chi-Wei Lam (Project Manager & Tester)
+2. Maria Petrochenkova (Software Architect)
+3. Minh Lay (Software Engineer)
 
 ## License
-
 
 Licensed under the MIT License;
 you may not use this file except in compliance with the License.
