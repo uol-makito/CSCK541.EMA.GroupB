@@ -1,17 +1,17 @@
 """
-This script creates a dictionary, writes its content to a text file, serialises it, 
-encrypts the text file, and sends both the serialised dictionary and the encrypted text file 
-to a server using HTTP POST. The user is prompted to specify the pickling format, and whether 
-or not to encrypt the text file.
+This script creates a dictionary, writes its content to a text file, serialises it,
+encrypts the text file, and sends both the serialised dictionary and the encrypted text file
+to a server using HTTP POST. The user is prompted to specify the pickling format, and whether
+to encrypt the text file.
 
 Usage:
-    Run the script, and follow the prompts to specify the pickling format and encryption 
-    options. The serialised dictionary and encrypted text file will be sent to the specified 
+    Run the script, and follow the prompts to specify the pickling format and encryption
+    options. The serialised dictionary and encrypted text file will be sent to the specified
     server using HTTP POST.
 """
 
 # pylint: disable=C0103
-# pylint: disable=W0702
+# pylint: disable=W0703
 
 import base64
 import json
@@ -40,9 +40,9 @@ try:
 
     # Print a message indicating that the dictionary was created, along with its contents.
     print(f"Created dictionary:\n{my_dict}\n")
-except:
-    # If an exception occurs, print an error message and exit the programme.
-    print("Error occurred while creating dictionary. \n")
+except Exception as e:
+    # If an exception occurs, print an error message and exit the program.
+    print(f"*** Error occurred while creating dictionary: \n{e}\n")
     sys.exit()
 
 try:
@@ -60,9 +60,9 @@ try:
 
     # Print a message indicating that the text file was created, along with its contents.
     print(f"Created text file with following content: \n{text_file_content}\n")
-except:
-    # If an exception occurs, print an error message and exit the programme.
-    print("Error occurred while creating or reading text file. \n")
+except Exception as e:
+    # If an exception occurs, print an error message and exit the program.
+    print(f"*** Error occurred while creating or reading text file. \n{e}\n")
     sys.exit()
 
 try:
@@ -92,9 +92,9 @@ try:
 
     # Print the serialised dictionary in the specified format.
     print(f"Serialised dictionary ({pickling_format}): \n{serialised_dict}\n")
-except:
-    # If an exception occurs, print an error message and exit the programme.
-    print("Error occurred while processing dictionary. \n")
+except Exception as e:
+    # If an exception occurs, print an error message and exit the program.
+    print(f"*** Error occurred while processing dictionary. \n{e}\n")
     sys.exit()
 
 try:
@@ -102,20 +102,23 @@ try:
     encrypt = input("Do you want to encrypt the text file? (yes or no): ")
 
     if encrypt == "yes":
-        # If the user wants to encrypt the text file, encrypt it using Fernet encryption.
+        # If the user wants to encrypt the text file, print user's choice,
+        # then encrypt it using Fernet encryption.
+        print("Text file will be sent with encryption. \n")
         is_encrypted = "1"
         encryption_key = Fernet.generate_key()
         fernet = Fernet(encryption_key)
         text_file_encrypted = fernet.encrypt(bytes(text_file_content, encoding="utf-8"))
     else:
-        # If the user doesn't want to encrypt the text file,
-        # set the encryption key and encrypted text to default values.
+        # If the user doesn't want to encrypt the text file, print user's choice,
+        # then set the encryption key and encrypted text to default values.
+        print("Text file will be sent unencrypted. \n")
         is_encrypted = "0"
         encryption_key = b""
         text_file_encrypted = text_file_content
-except:
-    # If an exception occurs, print an error message and exit the programme.
-    print("Error occurred while processing text file. \n")
+except Exception as e:
+    # If an exception occurs, print an error message and exit the program.
+    print(f"*** Error occurred while processing text file. \n{e}\n")
     sys.exit()
 
 try:
@@ -124,27 +127,27 @@ try:
 
     # Send HTTP POST request with serialised dictionary as data and text file as files.
     response = requests.post(f"http://{server_host}:{server_port}",
-                            data={ "SerialisedDictionary": serialised_dict },
-                            files={ "TextFile": (text_file_name, text_file_encrypted) },
-                            headers={
+                             data={ "SerialisedDictionary": serialised_dict },
+                             files={ "TextFile": (text_file_name, text_file_encrypted) },
+                             headers={
                                 "IsEncrypted": is_encrypted,
                                 "EncryptionKey": base64.b64encode(encryption_key),
                                 "PicklingFormat": pickling_format
                                 },
-                            timeout=request_timeout)
+                             timeout=request_timeout)
 
     # Check if request was successful (status code 200).
     if response.status_code == 200:
         # Print success message along with response status code and content.
         print("Successfully sent serialised dictionary and text file. ")
         print(f" - Response Status: {response.status_code}")
-        print(f" - Response Content: {response.text}")
+        print(f" - Response Content: {response.text}\n")
     else:
         # Print failure message along with response status code and content.
         print("Failed to send serialised dictionary and text file. ")
         print(f" - Response Status: {response.status_code}")
-        print(f" - Response Content: {response.text}")
-except:
-    # If an exception occurs, print an error message and exit the programme.
-    print("Error occurred while sending request HTTP POST request to server. \n")
+        print(f" - Response Content: {response.text}\n")
+except Exception as e:
+    # If an exception occurs, print an error message and exit the program.
+    print(f"*** Error occurred while sending request HTTP POST request to server. \n{e}\n")
     sys.exit()
