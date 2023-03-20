@@ -186,7 +186,7 @@ class MyHandler(BaseHTTPRequestHandler):
             print(f"*** Error occurred while sending response to client. \n{e}\n")
             sys.exit()
 
-            
+
 try:
     # Set server address to localhost on a defined port.
     server_address = ("", server_port)
